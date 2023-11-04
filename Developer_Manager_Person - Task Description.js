@@ -13,10 +13,17 @@ Person.prototype.greet = function () {
 /* --------------------------- Manager constructor -------------------------- */
 
 function Manager(name, age, managed) {
-  Person.call(this,name,age)
+  Person.call(this,name,age,)
   this.managed = managed;
 }
 Manager.prototype.__proto__ = Person.prototype;
+
+Manager.prototype.greet=function (){
+  let managedNames= this.managed.map(dev => dev.name).join(',');
+  console.log(`Hi, I'm ${this.name} and I'm ${this.age} years old\nI manage ${managedNames}`)
+
+}
+
 
 /* -------------------------- Developer constructor ------------------------- */
 function Developer(name, age, skillset) {
@@ -24,6 +31,11 @@ function Developer(name, age, skillset) {
   this.skillset=skillset
 }
 Developer.prototype.__proto__ = Person.prototype;
+
+Developer.prototype.greet= function(){
+  console.log(`Hi, I'm ${this.name} and I'm ${this.age} years old\nI know ${this.skillset.join(',')}`)
+}
+
 // Developer objects should inherit all methods from Person:
 
 /* ----------------------------- Create Objects ----------------------------- */
