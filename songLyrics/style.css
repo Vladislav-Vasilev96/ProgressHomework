@@ -18,9 +18,9 @@
     width: auto; 
     height: 100px; 
     object-fit: cover; 
-    transition: filter 0.3s ease; /* Adding a smooth transition effect */
+    transition: filter 0.3s ease; 
 }
 
 .image-container img:hover {
-    filter: brightness(1.5); /* Adjust the brightness value as needed */
+    filter: brightness(1.5); 
 }

@@ -28,7 +28,7 @@ function addItem() {
 }
 
 function editItem(li) {
-    document.getElementById('itemInput').value = li.textContent  ;
+    document.getElementById('itemInput').value = li.textContent ;
 
     li.remove();
 }
