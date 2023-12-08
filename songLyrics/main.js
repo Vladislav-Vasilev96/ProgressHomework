@@ -1,17 +1,40 @@
 let imageContainer = document.querySelector(".image-container");
+let lyricsParagraph = document.getElementById('lyrics');
 
-document.addEventListener("DOMContentLoaded", function () {
-    Reveal.initialize();
 
-    imageContainer.children.forEach(image => {
-        if (image && image.tagName === 'IMG') {
-            image.addEventListener('mouseover', function (event) {
-                event.target.style.filter = 'brightness(1.5)'; 
-            });
+imageContainer.children.forEach((image) => {
+  image.addEventListener("mouseenter", () => {
+    image.style.transform = "scale(1.1)";
+    image.style.transition = "transform 0.3s ease";
+    image.style.filter = "brightness(0.7)";
+  });
 
-            image.addEventListener('mouseout', function (event) {
-                event.target.style.filter = 'brightness(1)'; 
-            });
-        }
-    });
+  image.addEventListener("mouseleave", () => {
+    image.style.transform = "scale(1)";
+    image.style.filter = "brightness(1)";
+  });
 });
+
+imageContainer.addEventListener('click', (event) => {
+    if (event.target.tagName === 'IMG') {
+        let lyricsFile = event.target.getAttribute('data-lyrics');
+        loadLyrics(lyricsFile);
+     
+    }
+});
+
+
+
+function loadLyrics(file) {    
+  let xhr = new XMLHttpRequest();
+
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      lyricsParagraph.innerText = xhr.responseText;
+    }
+  };
+  xhr.open("GET", file, true);
+   xhr.send();
+}
+
+

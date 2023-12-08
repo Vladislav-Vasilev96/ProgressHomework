@@ -6,9 +6,7 @@
     <title>Favorite Artists and Songs</title>
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.2.0/dist/reset.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.2.0/dist/reveal.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.2.0/dist/theme/black.css">
+
 </head>
 
 <body>
@@ -16,11 +14,11 @@
         <div class="slides">
 
             <div class="image-container">
-                <img src="./songsImages/The_Weeknd_-_Starboy.png" alt="Image 1">
-                <img src="./songsImages/molec.png" alt="Image 2">
-                <img src="./songsImages/drakeGod'sPlan.jpg" alt="Image 3">
+                <img src="./songsImages/The_Weeknd_-_Starboy.png" alt="Image 1" data-lyrics="./lyrics/theWeekendStarBoy.txt">
+                <img src="./songsImages/molec.png" alt="Image 2" data-lyrics="./lyrics/molecIfISeeYou.txt">
+                <img src="./songsImages/drakeGod'sPlan.jpg" alt="Image 3" data-lyrics="./lyrics/drakeGod'sPlan.txt">
             </div>
-            <p>Click on each row to view song lyrics.</p>
+            <p id="lyrics">Click on each row to view song lyrics.</p>
         </div>
 
         
